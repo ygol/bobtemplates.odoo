@@ -1,0 +1,11 @@
+{{% if odoo.version < 11 %}}# -*- coding: utf-8 -*-
+{{% endif %}}
+
+from odoo import http
+from odoo.http import request
+
+
+class {{{ controller.name_camelcased }}}(http.Controller):
+    @http.route('/hello/world', auth='public')
+    def index(self, **kw):
+        return "Hello, world"

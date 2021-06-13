@@ -1,0 +1,3 @@
+odoo.define('{{{ addon.name }}}.{{{js.name_underscored}}}', function (require) {
+    "use strict";
+});
