@@ -1,12 +1,15 @@
 {{% if odoo.version < 11 %}}# -*- coding: utf-8 -*-
 {{% endif -%}}
+# Part of {{{ addon.name }}}. See LICENSE file for full copyright and licensing details.
+
 {
     "name": """{{{ addon.name }}}""",
     "summary": """{{{ addon.summary }}}""",
     "images": [],
     "version": "{{{ odoo.version }}}.0.1.0.0",
-    "author": "Ygol InternetWork, Yves Goldberg",
+    "author": "Yves Goldberg (Ygol InternetWork)",
     "support": "info@ygol.com",
+    "category": 'Project',
     "license": "Other proprietary",
     "depends": [
     ],
@@ -25,4 +28,5 @@
 
     "auto_install": False,
     "installable": True,
+    "application": True,
 }
