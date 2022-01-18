@@ -22,7 +22,7 @@ setup(
     license="LGPLv3",
     author="ACSONE SA/NV",
     author_email="info@acsone.eu",
-    url="http://github.com/acsone/bobtemplates.odoo",
+    url="http://github.com/ygol/bobtemplates.odoo",
     install_requires=["mr.bob"],
     packages=find_packages(exclude=["tests"]),
     # TODO: bobtemplates.odoo should be a ns package too but that breaks mr.bob
