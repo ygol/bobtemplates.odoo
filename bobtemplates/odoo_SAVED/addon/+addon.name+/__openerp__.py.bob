@@ -1,0 +1,37 @@
+{{% if odoo.version < 11 %}}# -*- coding: utf-8 -*-
+{{% endif -%}}
+# Copyright {{{ copyright.year }}} {{{ copyright.name }}}
+# Part of module {{{ addon.name }}}. See LICENSE file for
+# full copyright and licensing details.
+
+{
+    'name': '{{{ addon.name_camelwords }}}',
+{{% if addon.oca %}}
+    'summary': """
+        {{{ addon.summary }}}""",
+{{% else %}}
+    'description': """
+        {{{ addon.summary }}}""",
+{{% endif %}}
+    'version': '{{{ addon.version }}}',
+    'license': 'Other proprietary',
+    'author': 'Yves Goldberg (Ygol InternetWork){{% if addon.oca %}},Odoo Community Association (OCA){{% endif %}}',
+    'website': 'https://www.ygol.com',
+    'depends': [
+    ],
+    'external_dependencies': {"python": [], "bin": []},
+    'data': [
+    ],
+    'demo': [
+    ],
+    'qweb': [
+    ],
+    'post_load': None,
+    'pre_init_hook': None,
+    'post_init_hook': None,
+    'uninstall_hook': None,
+
+    'auto_install': False,
+    'installable': True,
+    'application': True,
+}
