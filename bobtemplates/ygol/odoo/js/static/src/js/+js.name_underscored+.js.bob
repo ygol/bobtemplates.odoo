@@ -1,5 +1,0 @@
-// Part of {{{ addon.name }}}. See LICENSE file for full copyright and licensing details.
-
-odoo.define('{{{ addon.name }}}.{{{js.name_underscored}}}', function (require) {
-    "use strict";
-});

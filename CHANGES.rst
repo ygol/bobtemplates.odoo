@@ -5,6 +5,10 @@ Changes
 .. ----------
 .. -
 
+1.5.3 (2022-03-20)
+------------------
+- [FIX] new template: ygol_new + itpp
+
 1.5.2 (2022-03-19)
 ------------------
 - [ADD] new template: ygol_new
