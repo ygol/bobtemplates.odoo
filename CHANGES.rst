@@ -5,6 +5,11 @@ Changes
 .. ----------
 .. -
 
+1.5.2 (2022-03-19)
+------------------
+- [ADD] new template: ygol_new
+- [IMP] switch to new template: ygol_new
+
 1.4.0 (2021-08-13)
 ------------------
 - [ADD] Odoo 13 and 14 support

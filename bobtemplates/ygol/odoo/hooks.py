@@ -8,11 +8,13 @@ import ast
 import datetime
 import os
 import re
-from subprocess import check_output
 
 from mrbob.bobexceptions import ValidationError
 from mrbob.hooks import show_message
-from pkg_resources import parse_version
+
+# from pkg_resources import parse_version
+
+# from subprocess import check_output
 
 
 def _dotted_to_camelcased(dotted):
@@ -101,7 +103,8 @@ def _add_in_file_text(configurator, dir_path, to_file, import_string):
                 import_string,
             )
         if to_file == "ir.model.access.csv":
-            import_string = "id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink{}".format(
+            import_string = "id,name,model_id:id,group_id:id,perm_read, \
+                perm_write,perm_create,perm_unlink{}".format(
                 import_string
             )
 
@@ -404,7 +407,8 @@ def post_render_test(configurator):
     script_text = """
     <template id="test_{0}" inherit_id="{1}">
         <xpath expr="." position="inside">
-            <script type="text/javascript" src="/{2}/static/src/js/test_{0}.js"></script>
+            <script type="text/javascript" src="/{2}/static/src/js/test_{0}.js">
+            </script>
         </xpath>
     </template>
     """.format(

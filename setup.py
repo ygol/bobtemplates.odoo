@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Copyright © 2016 ACSONE SA/NV
+# Copyright © 2022 Ygol InternetWork
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from setuptools import find_packages, setup
