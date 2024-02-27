@@ -1,7 +1,6 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 # Copyright © 2016 ACSONE SA/NV
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from setuptools import find_packages, setup
 
@@ -23,10 +22,11 @@ setup(
     author="ACSONE SA/NV",
     author_email="info@acsone.eu",
     url="http://github.com/ygol/bobtemplates.odoo",
-    install_requires=["mr.bob"],
+    install_requires=["mr.bob", "requests"],
     packages=find_packages(exclude=["tests"]),
     # TODO: bobtemplates.odoo should be a ns package too but that breaks mr.bob
     namespace_packages=["bobtemplates"],
     include_package_data=True,
     setup_requires=["setuptools_scm"],
+    python_requires=">=3.7",
 )

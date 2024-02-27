@@ -5,20 +5,20 @@
     # See LICENSE file for full copyright and licensing details.
 -->
 
-{{% if odoo.version < 9 %}}
+{{% if odoo.version< 9 %}}
 <openerp>
 <data noupdate="1">
 {{% else %}}
-<odoo noupdate="1">
+    <odoo noupdate="1">
 {{% endif %}}
 
-    <!-- TODO
+            <!-- TODO
     <record model="{{{ model.name_dotted }}}" id="{{{ model.name_underscored }}}_demo_1">
        <field name="name">...</field>
     </record>
     -->
 
-{{% if odoo.version < 9 %}}
+{{% if odoo.version        < 9 %}}
 </data>
 </openerp>
 {{% else %}}

@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 # Copyright © 2016 ACSONE SA/NV
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import os
 import shutil
@@ -11,7 +10,6 @@ from scripttest import TestFileEnvironment
 
 
 class BaseTemplateTest(unittest.TestCase):
-
     # credit bobtemplates.plone
 
     def setUp(self):
@@ -45,13 +43,37 @@ class OdooTemplatesTest(BaseTemplateTest):
     answers_file = ""
     target_dir = ""
 
-    def _create_addon(self):
+    def _create_addon(self, answers_file="test_odoo_addon_answers.ini"):
         self.template = "addon"
-        self.answers_file = "test_odoo_addon_answers.ini"
+        self.answers_file = answers_file
         self.target_dir = "."
         return self.create_template()
 
-    def test_odoo_addon(self):
+    def test_odoo_addon_oca(self):
+        result = self._create_addon(answers_file="test_odoo_addon_oca_answers.ini")
+        fragments = [
+            r
+            for r in result.files_created.keys()
+            if r.startswith(self.addon + "/readme/")
+        ]
+        files = result.files_created.copy()
+        self.assertTrue(fragments)
+        for f in fragments:
+            files.pop(f, False)
+        self.assertEqual(
+            set(files.keys()),
+            {
+                self.addon,
+                self.addon + "/__init__.py",
+                self.addon + "/__manifest__.py",
+                self.addon + "/readme",
+                self.addon + "/static",
+                self.addon + "/static/description",
+                self.addon + "/static/description/icon.png",
+            },
+        )
+
+    def test_odoo_addon_acsone(self):
         result = self._create_addon()
         self.assertEqual(
             set(result.files_created.keys()),
@@ -60,9 +82,6 @@ class OdooTemplatesTest(BaseTemplateTest):
                 self.addon + "/__init__.py",
                 self.addon + "/__manifest__.py",
                 self.addon + "/README.rst",
-                self.addon + "/static",
-                self.addon + "/static/description",
-                self.addon + "/static/description/icon.png",
             },
         )
 
@@ -84,6 +103,41 @@ class OdooTemplatesTest(BaseTemplateTest):
                 self.addon + "/demo/foo_model.xml",
                 self.addon + "/security",
                 self.addon + "/security/foo_model.xml",
+            },
+        )
+
+    def test_odoo_readme(self):
+        self._create_addon(answers_file="test_odoo_addon_no_readme_answers.ini")
+        self.template = "readme"
+        self.answers_file = "test_odoo_readme_answers.ini"
+        self.target_dir = "addon_foo"
+        result = self.create_template()
+        self.assertEqual(
+            set(result.files_created.keys()),
+            {
+                self.addon + "/README.rst",
+            },
+        )
+
+    def test_odoo_readme_oca(self):
+        self._create_addon(answers_file="test_odoo_addon_oca_no_readme_answers.ini")
+        self.template = "readme"
+        self.answers_file = "test_odoo_readme_oca_answers.ini"
+        self.target_dir = "addon_foo"
+        result = self.create_template()
+        fragments = [
+            r
+            for r in result.files_created.keys()
+            if r.startswith(self.addon + "/readme/")
+        ]
+        files = result.files_created.copy()
+        self.assertTrue(fragments)
+        for f in fragments:
+            files.pop(f, False)
+        self.assertEqual(
+            set(files.keys()),
+            {
+                self.addon + "/readme",
             },
         )
 

@@ -2,7 +2,7 @@ bobtemplates.odoo
 =================
 
 .. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-   :target: http://www.gnu.org/licenses/agpl.html
+   :target: https://www.gnu.org/licenses/agpl.html
    :alt: License: AGPL 3.0 or Later
 .. image:: https://badge.fury.io/py/bobtemplates.odoo.svg
    :target: http://badge.fury.io/py/bobtemplates.odoo
@@ -15,11 +15,12 @@ templates to use when developing Odoo addons.
 
 It provides the following templates:
 
-  * ``addon``: an addon skeletton, with optional OCA README and icon
+  * ``addon``: an addon skeletton, with readme file and fragments/icon for OCA addon
   * ``model``: an Odoo model with accompanying form, tree, action, menu,
     demo data and ACL
   * ``test``: a test class
   * ``wizard``: a wizard with transient model, view and action
+  * ``readme``: Add readme file or fragments for OCA addon
 
 The following are candidates (pull requests welcome):
 

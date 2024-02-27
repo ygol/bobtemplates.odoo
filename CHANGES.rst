@@ -5,6 +5,49 @@ Changes
 .. ----------
 .. -
 
+3.1.0 (2023-06-13)
+------------------
+
+- [IMP] Remove view name for Odoo >= 12
+
+3.0.0 (2022-12-14)
+------------------
+
+- Support python 3.11. Remove support of python 3.6.
+- [IMP] wizard: no api.multi decorator in Odoo >= 13
+
+
+2.1.0 (2022-10-20)
+------------------
+
+- [IMP] addon: add a question to generate the README file or not
+
+2.0.0 (2022-09-26)
+------------------
+
+- Support python 3.10. Remove support of python < 3.6.
+
+1.5.2 (2022-09-29)
+------------------
+
+- [FIX] Fix readme template
+
+1.5.1 (2022-09-29)
+------------------
+
+- [CHG] Update readme
+
+1.5.0 (2022-09-29)
+------------------
+
+- [ADD] Add readme template
+- [CHG] Download fragments from https://github.com/OCA/maintainer-tools
+  for OCA module (for usage of oca-gen-addon-readme)
+
+1.4.1 (2022-02-18)
+------------------
+- [IMP] GNU: Change url to https
+
 1.4.0 (2021-08-13)
 ------------------
 - [ADD] Odoo 13 and 14 support
