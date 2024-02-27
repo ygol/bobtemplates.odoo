@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+{{% if odoo.version< 17 %}}<?xml version="1.0" encoding="utf-8"?>{{% endif %}}
 <!--
     # Copyright (C) {{{ copyright.year }}}- PRESENT to Yves Goldberg - Ygol InternetWork - All Rights Reserved
     # Part of module {{{ addon.name }}}.

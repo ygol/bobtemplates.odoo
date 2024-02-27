@@ -1,7 +1,8 @@
 {{% if odoo.version < 11 %}}# -*- coding: utf-8 -*-
 {{% endif -%}}
 # Copyright {{{ copyright.year }}} {{{ copyright.name }}}
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# Part of module {{{ addon.name }}}. See LICENSE file for
+# full copyright and licensing details.
 
 from {{% if odoo.version >= 10 %}}odoo{{% else %}}openerp{{% endif %}} import _, api, fields, models
 
